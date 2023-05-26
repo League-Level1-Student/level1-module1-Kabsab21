@@ -16,7 +16,6 @@ package _03_cat;
 		
 		*/
 
-
 public class Cat {
 
 	private String name;
@@ -47,7 +46,7 @@ public class Cat {
 			System.out.println("DEAD CAT :(. No cats were harmed");
 	}
 
-
+	
 }
 
 
