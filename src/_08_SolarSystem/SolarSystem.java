@@ -66,8 +66,15 @@ public class SolarSystem implements GameControlScene {
     Long startTimeMs = null;
     Game gameFrame = new Game("Solar System");
     
-    Planet earth = new Planet(12);
     
+    Planet mercury = new Planet(4,57900000,88);
+    Planet venus = new Planet(12,1082000000,224);
+    Planet earth = new Planet(12,149600000,365);
+    Planet mars = new Planet(6,227900000,687);
+    Planet jupiter = new Planet(14,778600000,4331);
+    Planet saturn = new Planet(120,1433500000,10747);
+    Planet uranus = new Planet(51,2872);
+    Planet neptune = new Planet(49);
     public SolarSystem() {
         gameFrame.setScene(this);
         gameFrame.start();

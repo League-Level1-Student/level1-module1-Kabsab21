@@ -1,16 +1,25 @@
 package _07_duck;
 
 public class duck {
+	 int numberOfFriends = 5;
+	 String favoriteFood = "donuts";
+	
+	 
+
+
+
+	public duck(String favoriteFood, int numberOfFriends) {
+	       this.favoriteFood = favoriteFood;
+	       this.numberOfFriends = numberOfFriends;
+	}
 	
 
-	void Duck(String favoriteFood, int numberOfFriends) {
-       this.favoriteFood = favoriteFood;
-       this.numberOfFriends = numberOfFriends;
-}
-
-void quack() {
+	void quack(){
+	System.out.println("quacke");
+	}
 	
-}
-void waddle(){
-}
+	void waddle(){
+		System.out.println("waddle waddle");
+	}
+	
 }

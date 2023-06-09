@@ -9,22 +9,24 @@ public class Planet {
     /*
      * Member variables
      */
+	static public Color color;
+	static public int avgDistFromSun;
+	static public int orbitalPeriod;
     int x, y, width, height;
     int diameter;
     
-    public Planet(int diameterPixels) {
+    public Planet(int diameterPixels, int avgDistFromSun,int orbitalPeriod ) {
         this.diameter = diameterPixels;
-    }
+        this.orbitalPeriod = orbitalPeriod;
+        this.avgDistFromSun = avgDistFromSun;
+    }   
 
     public void draw(Graphics g, int numDays) {
         /*
          * Local variables
          * Reassign or remove these after creating the correct member variables
          */
-        int avgDistFromSun = 1496 / 10;     // You can choose a different scaling than divided by 10
-        int orbitalPeriod = 365;
-        Color color = Color.BLUE;
-        
+     
         /*
          * Update position
          */
