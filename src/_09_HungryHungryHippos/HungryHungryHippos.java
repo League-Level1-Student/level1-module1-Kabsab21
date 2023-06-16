@@ -61,8 +61,11 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
      * Create your hippo objects here. The "left" input parameter indicates
      * which side the hippo is drawn.
      */
-    Hippo myHippoObject = new Hippo("left");
-
+    Hippo Hippo1 = new Hippo("left", "blueone", Color.blue);
+    Hippo Hippo2 = new Hippo("right", "greyhippo", Color.GRAY);
+    Hippo Hippo3 = new Hippo("up", "namesehdrw", Color.pink);
+    Hippo Hippo4 = new Hippo("down", "namesehdrw", Color.green);
+  
     public HungryHungryHippos() {
         gameFrame.setScene(this);
         gameFrame.start();
@@ -96,20 +99,27 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
         /*
          * Draw all the hippos here
          */
-        myHippoObject.draw(g);
+        Hippo1.draw(g);
+        Hippo2.draw(g);
+        Hippo3.draw(g);
+        Hippo4.draw(g);
         
         if (startGame) {
             /*
              * Move all the melons
              */
             updateMelons();
+           
             
             /*
              * Check if a hippo is eating a melon by calling the
              * checkHippoEating(myHippoObject) method. Make sure to do
              * this for all of your hippos!
              */
-            checkHippoEating(myHippoObject);
+            checkHippoEating(Hippo1);
+            checkHippoEating(Hippo2);
+            checkHippoEating(Hippo3);
+            checkHippoEating(Hippo4);
         }
     }
 
@@ -123,13 +133,13 @@ public class HungryHungryHippos implements GameScene, GameControlScene {
         if (keyCode == KeyEvent.VK_S) {
             startGame = true;
         } else if (keyCode == KeyEvent.VK_1) {
-            myHippoObject.eat();
+            Hippo1.eat();
         } else if (keyCode == KeyEvent.VK_2) {
-            
+        	 Hippo2.eat();
         } else if (keyCode == KeyEvent.VK_3) {
-            
+        	 Hippo3.eat();
         } else if (keyCode == KeyEvent.VK_4) {
-            
+        	 Hippo4.eat();
         }
     }
     

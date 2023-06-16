@@ -9,16 +9,18 @@ public class Planet {
     /*
      * Member variables
      */
-	static public Color color;
-	static public int avgDistFromSun;
-	static public int orbitalPeriod;
+	public Color color;
+	public int avgDistFromSun;
+	public int orbitalPeriod;
     int x, y, width, height;
     int diameter;
     
-    public Planet(int diameterPixels, int avgDistFromSun,int orbitalPeriod ) {
+    public Planet(int diameterPixels, int avgDistFromSun, int orbitalPeriod, Color color ) {
         this.diameter = diameterPixels;
         this.orbitalPeriod = orbitalPeriod;
         this.avgDistFromSun = avgDistFromSun;
+        this.color = color;
+        
     }   
 
     public void draw(Graphics g, int numDays) {
