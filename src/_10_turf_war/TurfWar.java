@@ -59,17 +59,30 @@ public Player(int x, int y, int speed, int playerSize, int playerColor, int upKe
              * where the area detailing game stats(timer, score, etc.) ends.
              * 
              */     
-            if (moveUp && y > statsBoardLine) {
+            if (moveUp  ) {
                 y-=speed;
             }
-          if ( moveDown && y < 0) {
-        	  y+=speed;
-          }
-          if (moveRight && x > statsBoardLine) {
+            if( moveDown ) {
+            	y+=speed;
+            }
+          if (moveLeft ) {
               x-=speed;
           }
-          if ( moveLeft && x < 0) {
+          if ( moveRight  ) {
         	  x+=speed;
+          }
+          
+          if( y > height- playerSize) {
+        	  y = height- playerSize;
+          }
+          if( y < statsBoardLine ) {
+        	  y = 100;
+          }
+          if( x > width- playerSize) {
+        	  x = width- playerSize;
+          }
+          if( x < 0) {
+        	  x = 0;
           }
             /* 
              * 3. Make the Player move in every other direction.
@@ -148,7 +161,7 @@ public Player(int x, int y, int speed, int playerSize, int playerColor, int upKe
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300.
-       setSize(300,300);
+       setSize(600,600);
     }
 
     @Override
@@ -160,7 +173,7 @@ public Player(int x, int y, int speed, int playerSize, int playerColor, int upKe
         ((java.awt.Canvas) surface.getNative()).requestFocus();
 
         // 6. Set the background color.
- fill(100,100,100);
+        background(100,100,100);
 
         // 7. Call the noStroke Method.
         noStroke();
@@ -177,8 +190,8 @@ public Player(int x, int y, int speed, int playerSize, int playerColor, int upKe
          * not select black, white or the color you used for your background as it
          * will give that player an unfair advantage.
          */
-       player1 = new Player(50, 70, 10, 10, 555555, W, A, S, D);
-       player2 = new Player(100, 70, 10, 10, 888867, UP, LEFT, DOWN, RIGHT);
+       player1 = new Player(50, 200, 10, 10, Color.blue.getRGB(), W, A, S, D);
+       player2 = new Player(450, 200, 10, 10, Color.red.getRGB(), UP, LEFT, DOWN, RIGHT);
        }
 
 
